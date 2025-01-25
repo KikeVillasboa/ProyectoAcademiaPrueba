@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Inscripciones{% endblock %}
+
+{% block content %}
+<h1>Lista de Inscriptos</h1>
+<a href="{{ url_for('crear_inscripcion') }}" class="btn btn-primary mb-3">Inscribir Alumno</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Estudiante</th>
+            <th>Curso</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for inscripcion in inscripciones %}
+        <tr>
+            <td>{{ inscripcion.estudiante }}</td>
+            <td>{{ inscripcion.curso }}</td>
+            <td>
+                <a href="{{ url_for('eliminar_inscripcion', id=inscripcion.id) }}" class="btn btn-danger btn-sm">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

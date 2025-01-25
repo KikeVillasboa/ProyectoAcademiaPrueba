@@ -1,0 +1,6 @@
+# Archivos comunes en Python
+__pycache__/
+*.pyc
+*.pyo
+*.env
+.vscode/

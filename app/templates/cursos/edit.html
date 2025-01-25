@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Crear Curso{% endblock %}
+
+{% block content%}
+
+    <h1>{{ 'Editar' if curso else 'Agregar' }} Curso</h1>
+    <form method="POST">
+        <input type="text" name="nombre" placeholder="Nombre del Curso" value="{{ curso.nombre if curso else '' }}" required>
+        <input type="text" name="nivel" placeholder="Nivel" value="{{ curso.nivel if curso else '' }}" required>
+        <input type="text" name="profesor" placeholder="Profesor" value="{{ curso.profesor if curso else '' }}">
+        <button type="submit">Guardar</button>
+    </form>
+
+{% endblock %}

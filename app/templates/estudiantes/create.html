@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Crear Estudiante{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid">
+    <h1>Crear Nuevo Estudiante</h1>
+    <form method="POST" class="row g-3">
+        <div>
+            <label for="nombre" class="form-label">Nombre:</label>
+            <input type="text" class="form-control w-50" id="nombre" name="nombre" required>
+        </div>
+        <div class="row-cols-lg-auto">
+            <label for="apellido" class="form-label">Apellido:</label>
+            <input type="text" class="form-control w-50" id="apellido" name="apellido" required >
+        </div>
+        <div class="row-cols-lg-auto">
+                <label for="edad" class="form-label">Edad:</label>
+                <input type="number" class="form-control w-50" id="edad" name="edad" required >
+        </div>
+        <div class="row-cols-lg-auto">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" class="form-control w-50" id="email" name="email" required >
+        </div>
+        <div class="row-cols-lg-auto">
+            <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Nueva Inscripcion{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <h1>Nueva Inscripción</h1>
+        <form method="POST" class="row g-3">
+            <div class="row-cols-lg-auto">
+                <label for="estudiante_id" class="form-label">Estudiante:</label>
+                <select name="estudiante_id" required class="form-select w-50">
+                    <option selected>Selecciona un Estudiante</option>
+                    {% for estudiante in estudiantes %}
+                        <option value="{{ estudiante.id }}">{{ estudiante.nombre }} {{ estudiante.apellido }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="row-cols-lg-auto">
+                <label for="curso_id" class="form-label">Curso:</label>
+                <select name="curso_id" required class="form-select w-50">
+                    <option selected>Selecciona un Curso</option>
+                    {% for curso in cursos %}
+                        <option value="{{ curso.id }}">{{ curso.nombre }} - {{ curso.nivel }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="row-cols-lg-auto">
+                <button type="submit" class="btn btn-primary btn-lg">Inscribir</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
